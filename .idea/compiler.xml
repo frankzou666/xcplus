@@ -7,10 +7,34 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
+      <profile name="Annotation profile for xcplus-content" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
+        </processorPath>
+        <module name="xcpluscontentmodel" />
+        <module name="xcpluscontentservice" />
+        <module name="xcpluscontentapi" />
+        <module name="xcplusbase" />
+        <module name="xcplus-parent (1) (org.example)" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xcplus-base" target="1.8" />
+      <module name="xcplus-content-api" target="1.8" />
+      <module name="xcplus-content-model" target="1.8" />
+      <module name="xcplus-content-service" target="1.8" />
+      <module name="xcplus-generator" target="1.8" />
+      <module name="xcplus-parent (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="xcplus-content-api" options="" />
+      <module name="xcplus-content-model" options="" />
+      <module name="xcplus-content-service" options="" />
       <module name="xcplus-parent" options="" />
     </option>
   </component>
