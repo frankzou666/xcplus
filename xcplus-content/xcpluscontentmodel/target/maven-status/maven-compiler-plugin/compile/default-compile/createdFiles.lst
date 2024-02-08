@@ -1,0 +1,10 @@
+com/example/xcpluscontentmodel/content/model/dto/QueryCourseParamsDto.class
+com/example/xcpluscontentmodel/content/model/po/Teachplan.class
+com/example/xcpluscontentmodel/content/model/po/CoursePublishPre.class
+com/example/xcpluscontentmodel/content/model/po/CourseCategory.class
+com/example/xcpluscontentmodel/content/model/po/CourseTeacher.class
+com/example/xcpluscontentmodel/content/model/po/CoursePublish.class
+com/example/xcpluscontentmodel/content/model/po/TeachplanMedia.class
+com/example/xcpluscontentmodel/content/model/po/CourseBase.class
+com/example/xcpluscontentmodel/M.class
+com/example/xcpluscontentmodel/content/model/po/CourseMarket.class
