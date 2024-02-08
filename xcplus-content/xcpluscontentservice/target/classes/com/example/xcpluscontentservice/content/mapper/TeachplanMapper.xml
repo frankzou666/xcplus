@@ -3,7 +3,7 @@
 <mapper namespace="com.example.xcpluscontentservice.content.mapper.TeachplanMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.xcpluscontentmodel.content.model.po.Teachplan">
+    <resultMap id="BaseResultMap" type="com.example.content.model.po.Teachplan">
         <id column="id" property="id" />
         <result column="pname" property="pname" />
         <result column="parentid" property="parentid" />

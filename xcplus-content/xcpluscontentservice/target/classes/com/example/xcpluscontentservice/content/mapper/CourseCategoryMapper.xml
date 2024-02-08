@@ -3,7 +3,7 @@
 <mapper namespace="com.example.xcpluscontentservice.content.mapper.CourseCategoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.xcpluscontentmodel.content.model.po.CourseCategory">
+    <resultMap id="BaseResultMap" type="com.example.content.model.po.CourseCategory">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="label" property="label" />

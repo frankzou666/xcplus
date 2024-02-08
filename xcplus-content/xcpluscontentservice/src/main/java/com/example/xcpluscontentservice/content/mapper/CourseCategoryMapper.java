@@ -1,7 +1,7 @@
 package com.example.xcpluscontentservice.content.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.xcpluscontentmodel.content.model.po.CourseCategory;
+import com.example.content.model.po.CourseCategory;
 
 
 /**

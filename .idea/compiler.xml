@@ -2,12 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for xcplus-content" enabled="true">
+      <profile name="Annotation profile for xcplus-system" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -16,9 +17,12 @@
         </processorPath>
         <module name="xcpluscontentmodel" />
         <module name="xcpluscontentservice" />
-        <module name="xcpluscontentapi" />
+        <module name="xcplus-system-service" />
         <module name="xcplusbase" />
+        <module name="xcpluscontentapi" />
+        <module name="xcplus-system-api" />
         <module name="xcplus-parent (1) (org.example)" />
+        <module name="xcplussystemmodel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +32,10 @@
       <module name="xcplus-content-service" target="1.8" />
       <module name="xcplus-generator" target="1.8" />
       <module name="xcplus-parent (1)" target="1.8" />
+      <module name="xcplus-system-model" target="1.8" />
+      <module name="xuecheng-plus-system" target="1.5" />
+      <module name="xuecheng-plus-system-model" target="1.5" />
+      <module name="xuecheng-plus-system-service" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

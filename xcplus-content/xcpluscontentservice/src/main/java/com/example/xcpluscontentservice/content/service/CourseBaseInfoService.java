@@ -2,10 +2,8 @@ package com.example.xcpluscontentservice.content.service;
 
 import com.example.xcplusbase.base.model.PageParams;
 import com.example.xcplusbase.base.model.PageResult;
-import com.example.xcpluscontentmodel.content.model.dto.QueryCourseParamsDto;
-import com.example.xcpluscontentmodel.content.model.po.CourseBase;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import com.example.content.model.dto.QueryCourseParamsDto;
+import com.example.content.model.po.CourseBase;
 
 
 public interface CourseBaseInfoService {
