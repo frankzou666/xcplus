@@ -1,4 +1,4 @@
-package com.example.content;
+package com.example.xcpluscontentservice.content;
 
 
 
@@ -12,10 +12,12 @@ import com.example.xcpluscontentservice.content.mapper.CourseBaseMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
 
 @SpringBootTest
+@ComponentScan("xcpluscontentservice.")
 public class CourseBaseMapperTests {
 
     @Autowired

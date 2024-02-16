@@ -7,8 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xcplus-system-api" />
+        <module name="xcplus-system-service" />
+        <module name="xcplussystemmodel" />
       </profile>
-      <profile name="Annotation profile for xcplus-system" enabled="true">
+      <profile name="Annotation profile for xcplus-content" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,12 +20,9 @@
         </processorPath>
         <module name="xcpluscontentmodel" />
         <module name="xcpluscontentservice" />
-        <module name="xcplus-system-service" />
         <module name="xcplusbase" />
         <module name="xcpluscontentapi" />
-        <module name="xcplus-system-api" />
         <module name="xcplus-parent (1) (org.example)" />
-        <module name="xcplussystemmodel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

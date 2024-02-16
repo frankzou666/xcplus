@@ -17,5 +17,43 @@
     <sql id="Base_Column_List">
         id, name, label, parentid, is_show, orderby, is_leaf
     </sql>
+    <select id="selectTreeNodes" resultType="com.example.content.model.dto.CourseCategoryTreeDto">
+        select
+
+        two.id            ,
+        two.name         ,
+        two.parentid      ,
+        two.orderby       ,
+        two.is_show      ,
+        two.is_leaf      ,
+        two.label
+        from course_category one
+        inner join course_category two on one.id = two.parentid
+        where one.parentid = #{id}
+        and one.is_show = 1
+        and two.is_show = 1
+        union all
+        select
+
+        two.id            ,
+        two.name         ,
+        two.parentid      ,
+        two.orderby       ,
+        two.is_show      ,
+        two.is_leaf      ,
+        two.label
+        from course_category two
+        where parentid =#{id}
+
+
+    </select>
+
+
+    <select id="selectAllNodes" resultType="java.lang.Long">
+        select COUNT(*)
+        from course_category two
+        where id=#{id}
+        group by id
+    </select>
 
 </mapper>

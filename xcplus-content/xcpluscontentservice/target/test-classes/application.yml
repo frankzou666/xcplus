@@ -9,7 +9,3 @@ spring:
       password: app123456
     main:
       allow-circular-references: true
-
-logging:
-  level:
-    root: DEBUG
