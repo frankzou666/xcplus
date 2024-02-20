@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -12,6 +13,8 @@
         <option value="$PROJECT_DIR$/xcplus-generator/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-system/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-system/xcplus-system-model/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-system/xcplus-system-service/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-system/xcplus-system-api/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
