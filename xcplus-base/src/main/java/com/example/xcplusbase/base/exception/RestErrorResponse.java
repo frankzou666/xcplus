@@ -10,11 +10,21 @@ import java.util.Date;
 
 public class RestErrorResponse implements Serializable {
     private String errMessage;
+
+    private String errCode;
     private LocalDateTime localDateTime;
 
     public RestErrorResponse(String errMessage) {
+
         this.errMessage = errMessage;
         this.localDateTime = LocalDateTime.now();
+    }
+
+
+
+    public RestErrorResponse(String errCode,String errMessage) {
+        this.errMessage = errMessage;
+        this.errCode = errCode;
     }
 
     public RestErrorResponse() {
@@ -34,5 +44,13 @@ public class RestErrorResponse implements Serializable {
 
     public void setLocalDateTime(LocalDateTime localDateTime) {
         this.localDateTime = localDateTime;
+    }
+
+    public String getErrCode() {
+        return errCode;
+    }
+
+    public void setErrCode(String errCode) {
+        this.errCode = errCode;
     }
 }

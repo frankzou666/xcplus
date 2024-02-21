@@ -32,4 +32,24 @@ public class TeachplanController {
         //查询课程接口
         teachplanService.saveTeachPlan(saveTeachPlanDto);
     }
+
+    @DeleteMapping("/teachplan/{courseId}")
+    public void deleteTeachPlan(@PathVariable Long courseId) {
+        teachplanService.deleteTeachPlan(courseId);
+
+    }
+
+
+
+    @PostMapping("/teachplan/{moveType}/{Id}")
+    public void moveTeachPlan(@PathVariable String moveType,@PathVariable Long Id) {
+        /*
+         *  课程计划称动
+         *
+         */
+
+        teachplanService.moveTeachPlan(moveType,Id);
+
+
+    }
 }

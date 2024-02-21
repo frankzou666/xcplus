@@ -6,15 +6,15 @@ import com.example.content.model.dto.AddCourseDto;
 import com.example.content.model.dto.CourseBaseInfoDto;
 import com.example.content.model.dto.EditCourseDto;
 import com.example.content.model.po.CourseMarket;
+import com.example.content.model.po.CourseTeacher;
+import com.example.content.model.po.Teachplan;
 import com.example.xcplusbase.base.exception.RestErrorResponse;
 import com.example.xcplusbase.base.exception.XcplusException;
 import com.example.xcplusbase.base.model.PageParams;
 import com.example.xcplusbase.base.model.PageResult;
 import com.example.content.model.dto.QueryCourseParamsDto;
 import com.example.content.model.po.CourseBase;
-import com.example.xcpluscontentservice.content.mapper.CourseBaseMapper;
-import com.example.xcpluscontentservice.content.mapper.CourseCategoryMapper;
-import com.example.xcpluscontentservice.content.mapper.CourseMarketMapper;
+import com.example.xcpluscontentservice.content.mapper.*;
 import com.example.xcpluscontentservice.content.service.CourseBaseInfoService;
 import groovy.util.logging.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -42,6 +42,16 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
     @Autowired
     CourseCategoryMapper courseCategoryMapper;
 
+    @Autowired
+    TeachplanMapper teachplanMapper;
+
+    @Autowired
+    CourseTeacherMapper courseTeacherMapper;
+
+
+
+
+
 
     @Override
     public PageResult<CourseBase> queryCousrBaseList(PageParams pageParams, QueryCourseParamsDto queryCourseParamsDto) {
@@ -50,8 +60,6 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         queryWrapper.like(StringUtils.isNotEmpty(queryCourseParamsDto.getCourseName()),CourseBase::getName,queryCourseParamsDto.getCourseName());
         queryWrapper.eq(StringUtils.isNotEmpty(queryCourseParamsDto.getAuditStatus()),CourseBase::getAuditStatus,queryCourseParamsDto.getAuditStatus());
         queryWrapper.eq(StringUtils.isNotEmpty(queryCourseParamsDto.getPublishStatus()),CourseBase::getStatus,queryCourseParamsDto.getPublishStatus());
-
-
 
         Page<CourseBase> page=new Page<>(pageParams.getPageNo(),pageParams.getPageSize());
         Page<CourseBase> result = courseBaseMapper.selectPage(page,queryWrapper);
@@ -128,7 +136,10 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         //组装返回数据
         CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
         BeanUtils.copyProperties(courseBase, courseBaseInfoDto);
-        BeanUtils.copyProperties(courseMarket, courseBaseInfoDto);
+        if (courseMarket !=null) {
+            BeanUtils.copyProperties(courseMarket, courseBaseInfoDto);
+        }
+
 
         //courseBaseInfoDto.getMtName(courseCategoryMapper.);
         return  courseBaseInfoDto;
@@ -182,6 +193,35 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
     }
 
+
+    @Transactional
+    @Override
+    public void deleteCourseBase(Long courseId) {
+
+        CourseBase courseBase = courseBaseMapper.selectById(courseId);
+        if (courseBase.getAuditStatus().equals("202002")) {
+            //删除课程营销信息
+            courseMarketMapper.deleteById(courseId);
+            //删除课程计划
+            LambdaQueryWrapper<Teachplan> queryWrapperTeachplan = new LambdaQueryWrapper<>();
+            queryWrapperTeachplan=queryWrapperTeachplan.eq(Teachplan::getCourseId,courseId);
+            teachplanMapper.delete(queryWrapperTeachplan);
+            //删除教师信息
+            LambdaQueryWrapper<CourseTeacher> queryWrapperCourseTeacher = new LambdaQueryWrapper<>();
+            queryWrapperCourseTeacher =queryWrapperCourseTeacher.eq(CourseTeacher::getCourseId,courseId);
+            courseTeacherMapper.delete(queryWrapperCourseTeacher);
+            //根据课程ID删除课程
+            courseBaseMapper.deleteById(courseId);
+        } else {
+            XcplusException.cast("删除课程状态不是未提交："+courseId);
+        }
+
+
+
+
+
+
+    }
 
 
 }

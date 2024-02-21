@@ -7,6 +7,8 @@ package com.example.xcplusbase.base.exception;
 public class XcplusException extends RuntimeException {
     private String errMessage;
 
+    private String errCode;
+
     public XcplusException() {
     }
 
@@ -14,8 +16,26 @@ public class XcplusException extends RuntimeException {
         this.errMessage = errMessage;
     }
 
+
+    public void setErrMessage(String errMessage) {
+        this.errMessage = errMessage;
+    }
+
+    public void setErrCode(String errCode) {
+        this.errCode = errCode;
+    }
+
+    public String getErrMessage() {
+        return errMessage;
+    }
+
+    public String getErrCode() {
+        return errCode;
+    }
+
     public XcplusException(String message, String errMessage) {
         super(message);
+        this.errCode= message;
         this.errMessage = errMessage;
     }
     public  static void cast(String message){

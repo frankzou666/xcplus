@@ -39,7 +39,12 @@ public class GlobalHandleException {
     public RestErrorResponse excption(Exception e){
         log.error("系统异常:",e.getMessage(),e);
         String errMessage  = e.getMessage();
-        RestErrorResponse restErrorResponse = new RestErrorResponse(CommonErrorEnum.UNKOWN_ERROR.getErrMessage() );
+        RestErrorResponse restErrorResponse;
+        if (errMessage.equals("120409")){
+            restErrorResponse = new RestErrorResponse("120409","课程计划信息还有子级信息，无法操作");
+        } else {
+            restErrorResponse = new RestErrorResponse(CommonErrorEnum.UNKOWN_ERROR.getErrMessage());
+        }
         return  restErrorResponse;
 
     }
