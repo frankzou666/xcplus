@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/xcplus-system/xcplus-system-model/target/xcplus-system-model.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xcplus-system/xcplus-system-model/target/xcplussystemmodel.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

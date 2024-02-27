@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for xcplus-system" enabled="true">
+      <profile name="Annotation profile for xcplus-gateway" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,6 +21,7 @@
         <module name="xcplusbase" />
         <module name="xcpluscontentapi" />
         <module name="xcplus-system-api" />
+        <module name="xcplus-gateway" />
         <module name="xcplus-parent (1) (org.example)" />
         <module name="xcplussystemmodel" />
       </profile>

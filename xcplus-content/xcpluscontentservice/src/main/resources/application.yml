@@ -1,21 +1,13 @@
-server:
-  servlet:
-    context-path: /content
-  port: 63040
 spring:
     application:
-      name: content-api
-    datasource:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.1.146:11337/xc_content?serverTimezone=UTC&userUnicode=true&useSSL=false&
-      username: app
-      password: app123456
-    main:
-      allow-circular-references: true
+      name: content-service
+    cloud:
+      nacos:
+        config:
+          server-addr: 192.168.1.146:8848
+          namespace: dev02
+          group: xcplus
+    config:
+      import:
+        - nacos:content-service.yaml
 
-swagger:
-  title: "学成内容管理"
-  description: "学成内容管理描述信息"
-  enable: true
-  base-package: com.example.xcpluscontentapi
-  version: 1.0.0
