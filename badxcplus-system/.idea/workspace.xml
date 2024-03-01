@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7bbe6481-66fd-404f-bdcc-867ac146b171" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/target.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/xcplus_system_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/xcplus_system_service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-api/src/main/java/com/example/system/SystemApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-api/src/main/java/com/example/system/config/GlobalCorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-api/src/main/java/com/example/system/controller/DictionaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-api/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-model/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-model/src/main/java/com/example/xcplussystemmodel/model/po/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/java/com/example/system/xuecheng/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/java/com/example/system/xuecheng/mapper/DictionaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/java/com/example/system/xuecheng/mapper/DictionaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/java/com/example/system/xuecheng/service/DictionaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/java/com/example/system/xuecheng/service/impl/DictionaryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xcplus-system-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ccpUKtuJnuFXi3BuAuorBnT6nT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-system"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bbe6481-66fd-404f-bdcc-867ac146b171" name="Changes" comment="" />
+      <created>1708420736298</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708420736298</updated>
+    </task>
+    <servers />
+  </component>
+</project>
