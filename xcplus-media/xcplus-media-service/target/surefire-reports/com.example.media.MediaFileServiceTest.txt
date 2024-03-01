@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.media.MediaFileServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+com.example.media.MediaFileServiceTest.testMediaFileService()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.example.media.MediaFileServiceTest.testMediaFileService(MediaFileServiceTest.java:14)
+

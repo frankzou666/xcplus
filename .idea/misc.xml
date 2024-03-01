@@ -16,10 +16,13 @@
         <option value="$PROJECT_DIR$/xcplus-system/xcplus-system-service/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-system/xcplus-system-api/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-media/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-content/xcpluscontentapi2/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/xcplus-content/xcpluscontentapi2/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-generator/pom.xml" />
       </set>
     </option>

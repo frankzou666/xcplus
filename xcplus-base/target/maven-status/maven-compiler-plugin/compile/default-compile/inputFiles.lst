@@ -1,3 +1,7 @@
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/exception/XcplusException.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/exception/RestErrorResponse.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/exception/CommonErrorEnum.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/exception/GlobalHandleException.java
 /Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/model/PageResult.java
 /Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/model/PageParams.java
 /Users/oliver/Documents/frank/dev/java/xcplus/xcplus-base/src/main/java/com/example/xcplusbase/base/config/LocalDateTimeConfig.java

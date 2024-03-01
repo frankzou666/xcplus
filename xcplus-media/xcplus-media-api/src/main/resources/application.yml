@@ -1,0 +1,19 @@
+#微服务配置
+spring:
+  application:
+    name: media-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.1.146:8848
+        namespace: dev02
+        group: xcplus
+      discovery:
+        server-addr: 192.168.1.146:8848
+        namespace: dev02
+        group: xcplus
+  config:
+    import:
+      - optional:nacos:xcplus-common.yaml?group=xcplus-common&refreshEnabled=false   #项目公用配置
+      - nacos:media-api.yaml   #子项目特殊配置
+
