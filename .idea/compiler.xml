@@ -8,24 +8,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for xcplus-system" enabled="true">
+      <profile name="Annotation profile for xcplus-auth" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
         </processorPath>
+        <module name="xcplusbase" />
+        <module name="xcplus-message-sdk" />
+        <module name="xcplus-media-api" />
+        <module name="xcplus-media-model" />
+        <module name="xcplus-gateway" />
+        <module name="xcplus-parent (1) (org.example)" />
         <module name="xcpluscontentmodel" />
         <module name="xcpluscontentservice" />
         <module name="xcplus-system-service" />
-        <module name="xcplusbase" />
         <module name="xcplus-media-service" />
-        <module name="xcplus-media-api" />
-        <module name="xcplus-media-model" />
+        <module name="xcplus-auth" />
+        <module name="xcplus-search" />
         <module name="xcpluscontentapi" />
         <module name="xcplus-system-api" />
-        <module name="xcplus-gateway" />
-        <module name="xcplus-parent (1) (org.example)" />
         <module name="xcplussystemmodel" />
       </profile>
     </annotationProcessing>
@@ -39,7 +42,9 @@
       <module name="xcplus-system-model" target="1.8" />
       <module name="xcpluscontentapi (1)" target="1.8" />
       <module name="xcpluscontentapi (2)" target="1.8" />
+      <module name="xuecheng-plus-auth" target="1.5" />
       <module name="xuecheng-plus-media" target="1.5" />
+      <module name="xuecheng-plus-search" target="1.5" />
       <module name="xuecheng-plus-system" target="1.5" />
       <module name="xuecheng-plus-system-model" target="1.5" />
       <module name="xuecheng-plus-system-service" target="1.5" />

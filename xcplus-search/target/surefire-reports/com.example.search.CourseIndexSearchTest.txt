@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.example.search.CourseIndexSearchTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec <<< FAILURE!
+com.example.search.CourseIndexSearchTest.test_addindex()  Time elapsed: 0.042 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.example.search.CourseIndexSearchTest.test_addindex(CourseIndexSearchTest.java:53)
+
+com.example.search.CourseIndexSearchTest.test_updateIndex()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.example.search.CourseIndexSearchTest.test_updateIndex(CourseIndexSearchTest.java:82)
+

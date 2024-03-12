@@ -43,7 +43,10 @@ public class MediaFilesController {
 
  @ApiOperation("上传图片")
  @RequestMapping(value = "/upload/coursefile",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-public UploadFileResultDto upload(@RequestPart("filedata")MultipartFile filedata) throws IOException {
+public UploadFileResultDto upload(@RequestPart("filedata")MultipartFile filedata,
+                                  @RequestPart(value="objectName",required = false) String objectName
+
+                          ) throws IOException {
 
 //    //准备上传文件的信息
 //     UploadFileParamsDto uploadFileParamsDto = new UploadFileParamsDto();
@@ -65,13 +68,13 @@ public UploadFileResultDto upload(@RequestPart("filedata")MultipartFile filedata
 
      UploadFileParamsDto uploadFileParamsDto = new UploadFileParamsDto();
      uploadFileParamsDto.setFileSize(filedata.getSize());
-     uploadFileParamsDto.setFilename(filedata.getName());
+     uploadFileParamsDto.setFilename(filedata.getOriginalFilename());
      uploadFileParamsDto.setFileType("001001");
 
      File tempfile = File.createTempFile("minio",".temp");
      filedata.transferTo(tempfile);
      String localFilePath = tempfile.getAbsolutePath();
-     UploadFileResultDto uploadFileResultDto = mediaFileService.uploadFile(companyId, uploadFileParamsDto, localFilePath);
+     UploadFileResultDto uploadFileResultDto = mediaFileService.uploadFile(companyId, uploadFileParamsDto, localFilePath,objectName);
      return uploadFileResultDto;
  }
 

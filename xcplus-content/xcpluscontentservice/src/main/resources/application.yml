@@ -9,5 +9,14 @@ spring:
           group: xcplus
     config:
       import:
+        - optional:nacos:feign.yaml?group=xcplus&refreshEnabled=true   #项目feign配置
         - nacos:content-service.yaml
-
+#
+logging:
+  level:
+    root: INFO
+    com:
+      example:
+        xcpluscontentservice:
+          content:
+            mapper: DEBUG

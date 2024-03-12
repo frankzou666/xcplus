@@ -52,7 +52,10 @@ public class BigFilesController {
         if (mediaFileService.checkChunk(fileMd5,chunk)){
             return  RestResponse.success(true);
         } else {
-            return  RestResponse.validfail("失败");
+            RestResponse restResponse = new RestResponse<>();
+            restResponse.setCode(0);
+            restResponse.setResult(false);
+            return  restResponse;
         }
     }
 

@@ -48,11 +48,11 @@
         </dependency>
 
         <!--服务发现中心-->
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>xcpluscontentservice</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>xcpluscontentservice</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

@@ -3,6 +3,7 @@ spring:
   application:
     name: media-service
   cloud:
+
     nacos:
       config:
         server-addr: 192.168.1.146:8848
@@ -13,6 +14,7 @@ spring:
         namespace: dev02
         group: xcplus
   config:
+    override-none: true
     import:
       - optional:nacos:xcplus-common.yaml?group=xcplus-common&refreshEnabled=false   #项目公用配置
       - nacos:media-api.yaml   #子项目特殊配置

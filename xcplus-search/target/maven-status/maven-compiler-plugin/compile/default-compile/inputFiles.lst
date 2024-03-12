@@ -1,0 +1,11 @@
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/dto/SearchCourseParamDto.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/service/IndexService.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/SearchApplication.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/dto/SearchPageResultDto.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/service/CourseSearchService.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/controller/CourseSearchController.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/po/CourseIndex.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/config/ElasticsearchConfig.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/service/impl/CourseSearchServiceImpl.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/controller/CourseIndexController.java
+/Users/oliver/Documents/frank/dev/java/xcplus/xcplus-search/src/main/java/com/example/search/service/impl/IndexServiceImpl.java

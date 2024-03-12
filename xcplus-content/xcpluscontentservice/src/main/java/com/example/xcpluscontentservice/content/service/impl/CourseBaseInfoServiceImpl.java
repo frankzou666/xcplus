@@ -5,15 +5,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.content.model.dto.AddCourseDto;
 import com.example.content.model.dto.CourseBaseInfoDto;
 import com.example.content.model.dto.EditCourseDto;
-import com.example.content.model.po.CourseMarket;
-import com.example.content.model.po.CourseTeacher;
-import com.example.content.model.po.Teachplan;
+import com.example.content.model.po.*;
 import com.example.xcplusbase.base.exception.RestErrorResponse;
 import com.example.xcplusbase.base.exception.XcplusException;
 import com.example.xcplusbase.base.model.PageParams;
 import com.example.xcplusbase.base.model.PageResult;
 import com.example.content.model.dto.QueryCourseParamsDto;
-import com.example.content.model.po.CourseBase;
 import com.example.xcpluscontentservice.content.mapper.*;
 import com.example.xcpluscontentservice.content.service.CourseBaseInfoService;
 import groovy.util.logging.Slf4j;
@@ -120,11 +117,16 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
         CourseBase courseBase = courseBaseMapper.selectById(courseId);
         BeanUtils.copyProperties(courseBase,courseBaseInfoDto);
+        CourseCategory courseCategoryMt =courseCategoryMapper.selectById(courseBase.getMt());
+        courseBaseInfoDto.setMtName(courseCategoryMt.getName());
+
+        CourseCategory courseCategorySt =courseCategoryMapper.selectById(courseBase.getSt());
+        courseBaseInfoDto.setStName(courseCategorySt.getName());
         return courseBaseInfoDto;
     }
 
 
-    private CourseBaseInfoDto getCourseBaseInfo(long courseId){
+    private CourseBaseInfoDto getCourseBaseInfo(Long courseId){
         //从课程基本表查询
 
         CourseBase courseBase = courseBaseMapper.selectById(courseId);
@@ -140,6 +142,11 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
             BeanUtils.copyProperties(courseMarket, courseBaseInfoDto);
         }
 
+        CourseCategory courseCategoryMt =courseCategoryMapper.selectById(courseBase.getMt());
+        courseBaseInfoDto.setMtName(courseCategoryMt.getName());
+
+        CourseCategory courseCategorySt =courseCategoryMapper.selectById(courseBase.getSt());
+        courseBaseInfoDto.setStName(courseCategorySt.getName());
 
         //courseBaseInfoDto.getMtName(courseCategoryMapper.);
         return  courseBaseInfoDto;

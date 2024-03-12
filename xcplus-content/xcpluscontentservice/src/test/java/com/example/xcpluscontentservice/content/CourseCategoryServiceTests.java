@@ -9,6 +9,7 @@ import com.example.xcplusbase.base.model.PageParams;
 import com.example.xcplusbase.base.model.PageResult;
 import com.example.xcpluscontentservice.content.service.CourseBaseInfoService;
 import com.example.xcpluscontentservice.content.service.CourseCategoryService;
+import com.example.xcpluscontentservice.content.service.CoursePublishService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

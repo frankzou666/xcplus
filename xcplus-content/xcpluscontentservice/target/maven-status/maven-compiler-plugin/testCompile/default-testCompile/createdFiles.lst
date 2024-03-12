@@ -1,4 +1,10 @@
-com/example/xcpluscontentservice/XcplusContentServiceApplicationTests.class
+com/example/xcpluscontentservice/content/FreeMarkerTest.class
+com/example/xcpluscontentservice/content/CourseCategoryServiceTests.class
 com/example/xcpluscontentservice/content/CourseBaseInfoServiceTests.class
 com/example/xcpluscontentservice/content/CourseBaseMapperTests.class
 com/example/xcpluscontentservice/content/ContentApplication.class
+com/example/xcpluscontentservice/content/TeachplanMapperTests.class
+com/example/xcpluscontentservice/content/CourseCategoryMapperTests.class
+com/example/xcpluscontentservice/content/MyTest.class
+com/example/xcpluscontentservice/ContentApplication.class
+com/example/xcpluscontentservice/XcplusContentServiceApplicationTests.class

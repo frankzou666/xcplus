@@ -1,6 +1,7 @@
 package com.example.xcpluscontentservice.content.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.example.content.model.dto.BindTeachPlanDto;
 import com.example.content.model.dto.SaveTeachPlanDto;
 import com.example.content.model.dto.TeachplanDto;
 import com.example.content.model.po.Teachplan;
@@ -138,6 +139,8 @@ public class TeachplanServiceImpl  implements TeachplanService {
     }
 
 
+
+
     public void updateOrderByMovedown(Teachplan teachplan,List<Teachplan> teachplanList) {
         //得到数组长度
         int teachplanListLengh = teachplanList.size();
@@ -178,4 +181,8 @@ public class TeachplanServiceImpl  implements TeachplanService {
         teachplanMapper.updateById(teachplanPrev);
         teachplanMapper.updateById(teachplan);
     }
+
+
+
+
 }

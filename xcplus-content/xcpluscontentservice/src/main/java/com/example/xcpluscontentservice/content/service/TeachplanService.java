@@ -1,8 +1,10 @@
 package com.example.xcpluscontentservice.content.service;
 
+import com.example.content.model.dto.BindTeachPlanDto;
 import com.example.content.model.dto.SaveTeachPlanDto;
 import com.example.content.model.dto.TeachplanDto;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -18,5 +20,6 @@ public interface TeachplanService {
 
     //移动课程
     public void moveTeachPlan(@PathVariable String moveType, @PathVariable Long Id);
+
 
 }

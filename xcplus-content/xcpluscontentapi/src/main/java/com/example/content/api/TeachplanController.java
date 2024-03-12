@@ -1,8 +1,11 @@
 package com.example.content.api;
 
 
+import com.example.content.model.dto.BindTeachPlanDto;
 import com.example.content.model.dto.SaveTeachPlanDto;
 import com.example.content.model.dto.TeachplanDto;
+import com.example.content.model.po.TeachplanMedia;
+import com.example.xcpluscontentservice.content.service.TeachplanMediaService;
 import com.example.xcpluscontentservice.content.service.TeachplanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +21,9 @@ public class TeachplanController {
 
     @Autowired
     TeachplanService teachplanService;
+
+    @Autowired
+    TeachplanMediaService teachplanMediaService;
 
 
     @GetMapping("/teachplan/{courseId}/tree-nodes")
@@ -40,6 +46,16 @@ public class TeachplanController {
     }
 
 
+    @PostMapping("/teachplan/association/media")
+    public TeachplanMedia assocTeachPlan(@RequestBody BindTeachPlanDto bindTeachPlanDto) {
+        /*
+         *  课程计划称动
+         *
+         */
+        TeachplanMedia teachplanMedia = teachplanMediaService.bindTeachPlan(bindTeachPlanDto);
+        return  teachplanMedia;
+
+    }
 
     @PostMapping("/teachplan/{moveType}/{Id}")
     public void moveTeachPlan(@PathVariable String moveType,@PathVariable Long Id) {
@@ -52,4 +68,6 @@ public class TeachplanController {
 
 
     }
+
+
 }

@@ -2,6 +2,8 @@ package com.example.media.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.media.mapper.MediaProcessMapper;
+import com.example.media.model.po.MediaProcess;
 import com.example.xcplusbase.base.exception.XcplusException;
 import com.example.xcplusbase.base.model.PageParams;
 import com.example.xcplusbase.base.model.PageResult;
@@ -20,6 +22,7 @@ import io.minio.messages.DeleteError;
 import io.minio.messages.DeleteObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.el.parser.BooleanNode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +32,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
@@ -54,6 +54,9 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     @Autowired
     MediaFilesMapper mediaFilesMapper;
+
+    @Autowired
+    MediaProcessMapper mediaProcessMapper;
 
     @Autowired
     MinioClient minioClient;
@@ -149,10 +152,11 @@ public class MediaFileServiceImpl implements MediaFileService {
     }
 
     @Override
-    public UploadFileResultDto uploadFile(Long companyId, UploadFileParamsDto uploadFileParamsDto, String localFilePath) {
+    public UploadFileResultDto uploadFile(Long companyId, UploadFileParamsDto uploadFileParamsDto, String localFilePath ,  String objectName) {
 
         //文件名
         String filename = uploadFileParamsDto.getFilename();
+        System.out.println(filename);
         //先得到扩展名
         String extension = filename.substring(filename.lastIndexOf("."));
 
@@ -163,7 +167,11 @@ public class MediaFileServiceImpl implements MediaFileService {
         String defaultFolderPath = getDefaultFolderPath();
         //文件的md5值
         String fileMd5 = getFileMd5(new File(localFilePath));
-        String objectName = defaultFolderPath+fileMd5+extension;
+        //如果objectname为空，就使用默认的年月日结构
+        if (StringUtils.isEmpty(objectName)) {
+            objectName = defaultFolderPath+fileMd5+extension;
+        }
+
         //上传文件到minio
         boolean result = addMediaFilesToMinIO(localFilePath, mimeType, bucket_mediafiles, objectName);
         if(!result){
@@ -281,14 +289,14 @@ public class MediaFileServiceImpl implements MediaFileService {
                                     .bucket(bucket_video)
                                     .object(filePath)
                                     .build());
-            if (stream!=null) {
+            if (stream==null) {
                 return false;
             } else  {
                 return  true;
             }
         } catch(Exception e) {
             e.printStackTrace();
-            return  true;
+            return  false;
         }
     }
 
@@ -338,6 +346,12 @@ public class MediaFileServiceImpl implements MediaFileService {
                     "001002",
                            "课程视频"
                        );
+           //增加待处理任务的视频信息
+            addFileInfotoMediaProcessDb(bucket_video,
+                    filePath,
+                    fileMd5,
+                    fileName
+            );
 
             //写入数据库
             if (result){
@@ -367,6 +381,30 @@ public class MediaFileServiceImpl implements MediaFileService {
     }
 
 
+    //文件下载
+    @Override
+    public Boolean downFile(String fileName,String filePath) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
+        //得到输入流
+        InputStream stream =
+                minioClient.getObject(
+                        GetObjectArgs.builder().bucket(bucket_video).object(filePath).build());
+
+        //创建输出流
+        File copied = new File(fileName);
+        FileOutputStream fs = new FileOutputStream(copied);
+        OutputStream fileOs = new BufferedOutputStream(fs);
+        //读写文件
+        byte[] buf = new byte[16384];
+        int bytesRead;
+        while ((bytesRead = stream.read(buf, 0, buf.length)) >= 0) {
+            fileOs.write(buf, 0, bytesRead);
+            fileOs.flush();
+        }
+        fs.close();
+        return  true;
+
+    }
+
 
     @Transactional
     public Boolean addFileInfotoDb(String bucket,
@@ -391,6 +429,33 @@ public class MediaFileServiceImpl implements MediaFileService {
         mediaFiles.setCreateDate(LocalDateTime.now());
         try {
             mediaFilesMapper.insert(mediaFiles);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  false;
+
+        }
+    }
+
+    @Transactional
+    public Boolean addFileInfotoMediaProcessDb(String bucket,
+                                   String filePath,
+                                   String fileMd5,
+                                   String fileName
+
+
+    ){
+        MediaProcess mediaProcess = new MediaProcess();
+        mediaProcess.setFileId(fileMd5);
+        mediaProcess.setBucket(bucket);
+        mediaProcess.setFilePath(filePath);
+        mediaProcess.setFilename(fileName);
+        //初始化的时候上传成功
+        mediaProcess.setStatus("1");
+        mediaProcess.setUrl("/"+bucket+"/"+filePath);
+        mediaProcess.setCreateDate(LocalDateTime.now());
+        try {
+            mediaProcessMapper.insert(mediaProcess);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

@@ -16,4 +16,11 @@ spring:
   config:
      import:
        - optional:nacos:xcplus-common.yaml?group=xcplus-common&refreshEnabled=false   #项目公用配置
+       - optional:nacos:freemarker-content-api.yaml?group=xcplus&refreshEnabled=true   #项目公用配置
+       - optional:nacos:search.yaml?group=xcplus&refreshEnabled=true   #项目公用配置
+       - optional:nacos:feign.yaml?group=xcplus&refreshEnabled=true   #项目feign配置
        - nacos:content-api.yaml   #子项目特殊配置
+
+#logging:
+#  level:
+#    root: DEBUG

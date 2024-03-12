@@ -18,6 +18,10 @@
         <option value="$PROJECT_DIR$/xcplus-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-media/pom.xml" />
         <option value="$PROJECT_DIR$/xcplus-content/xcpluscontentapi2/pom.xml" />
+        <option value="$PROJECT_DIR$/xuecheng-plus-message-sdk/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-message-sdk/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-search/pom.xml" />
+        <option value="$PROJECT_DIR$/xcplus-auth/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

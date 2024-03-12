@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.example")
 public class XcplusGateway {
     public static void main(String[] args) {
         SpringApplication.run(XcplusGateway.class,args);
